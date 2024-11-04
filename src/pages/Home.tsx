@@ -32,7 +32,7 @@ function Home() {
         }}
         onClick={() => navigate("/Test")} // 点击按钮时跳转到 /Test
       >
-        开始答题
+        スタート
       </Button>
       <Button
         variant="contained"
@@ -44,7 +44,7 @@ function Home() {
           marginTop: "20px",
         }}
       >
-        添加题目
+        問題を追加
       </Button>
     </Box>
   );
