@@ -1,7 +1,10 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom"; // 导入 useNavigate 钩子
 
 function Home() {
+  const navigate = useNavigate(); // 初始化导航函数
+
   return (
     <Box
       sx={{
@@ -26,7 +29,8 @@ function Home() {
           width: "200px",
           height: "60px",
           fontSize: "1.2rem",
-        }} // 自定义按钮大小和字体大小
+        }}
+        onClick={() => navigate("/Test")} // 点击按钮时跳转到 /Test
       >
         开始答题
       </Button>
@@ -38,7 +42,7 @@ function Home() {
           height: "60px",
           fontSize: "1.2rem",
           marginTop: "20px",
-        }} // 自定义按钮大小和字体大小
+        }}
       >
         添加题目
       </Button>
