@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
 
-function Home() {
+function AddQA() {
   return (
     <Box
       sx={{
@@ -46,4 +46,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default AddQA;
