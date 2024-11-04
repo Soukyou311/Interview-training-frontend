@@ -43,6 +43,31 @@ function Test() {
     }
   }, [question, isVoiceEnabled]); // 当 question 或 isVoiceEnabled 变化时触发
 
+  // 键盘事件处理
+  const handleKeyDown = (event: KeyboardEvent) => {
+    // 指定 event 的类型为 KeyboardEvent
+    switch (event.key) {
+      case "s":
+        handleShowAnswer();
+        break;
+      case "d":
+        handleNextQuestion();
+        break;
+      default:
+        break;
+    }
+  };
+
+  useEffect(() => {
+    // 添加键盘事件监听
+    window.addEventListener("keydown", handleKeyDown);
+
+    // 清理事件监听
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []); // 空依赖数组意味着只在组件挂载和卸载时运行
+
   return (
     <Container>
       {/* 右上角的语音开关 */}
@@ -74,10 +99,10 @@ function Test() {
       </QuestionBox>
       <ButtonGroup>
         <CustomButton variant="contained" onClick={handleShowAnswer}>
-          答えを表示
+          答えを表示[S]
         </CustomButton>
         <CustomButton variant="contained" onClick={handleNextQuestion}>
-          次の問題
+          次の問題[D]
         </CustomButton>
       </ButtonGroup>
     </Container>
